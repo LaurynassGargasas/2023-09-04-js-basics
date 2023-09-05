@@ -27,13 +27,13 @@ if (isNaN(age)) {
     console.log('Tikriausiai mokosi gimnazijoje, tačiau mokyklą gali būti ir baigęs.')
  } else if (age < 0) {
     console.log('įvestas amžius yra per mažas.')
- } else if (age <= 6) {
+ } else if (age < 7) {
     console.log('į mokyklą neina.')
-} else if (age <= 10) {
+} else if (age < 11) {
     console.log('eina į pradinę klasę.')
- } else if (age <= 14) {
+ } else if (age < 15) {
     console.log('eina į pagrindinę.')
- } else if (age <= 18) {
+ } else if (age < 19) {
     console.log('eina į gimnaziją.')
  } else if (age > 18) {
     console.log('mokyklą baigė.')
@@ -119,27 +119,37 @@ if ( playerAnswer3 === correctAnswer3 && playerAnswer4 === correctAnswer4 && pla
 
 let isLoggedIn = true
 let userName = 'John'
-let time = 6
-let isBirthday = true
+let time = 10
+let isBirthday = false
 
-
-if (isLoggedIn === true && time >= 5 && time <= 12 && isBirthday === true){
+if (time < 0 || time > 24) {
+    console.log('time is wrong')
+} else if (isLoggedIn && time >= 5 && time <= 12 && isBirthday){
     console.log(`Good morning, ${userName} and have a great birthday!`)
-} else if (isLoggedIn === true && time >= 13 && time <= 18 && isBirthday === true){
+} else if (isLoggedIn && time >= 13 && time <= 18 && isBirthday){
     console.log(`Good Afternoon, ${userName} and have a great birthday!`)
-} else if (isLoggedIn === true && time >= 19 && isBirthday === true){
+} else if (isLoggedIn && time >= 19 && isBirthday){
     console.log(`Good Evening, ${userName} and have a great birthday!`)
-} else if (isLoggedIn === true && time <= 4 && isBirthday === true){
+} else if (isLoggedIn && time <= 4 && isBirthday){
     console.log(`Good Evening, ${userName} and have a great birthday!`)
 }
-else if (isLoggedIn === true && time >= 5 && time <= 12){
+else if (isLoggedIn && time >= 5 && time <= 12){
     console.log(`Good morning, ${userName}.`)
-} else if (isLoggedIn === true && time >= 13 && time <= 18){
+} else if (isLoggedIn && time >= 13 && time <= 18){
     console.log(`Good Afternoon, ${userName}`)
-} else if (isLoggedIn === true && time >= 19){
+} else if (isLoggedIn && time >= 19){
     console.log(`Good Evening, ${userName}`)
-} else if (isLoggedIn === true && time <= 4){
+} else if (isLoggedIn && time <= 4){
     console.log(`Good Evening, ${userName}`)
 } else if (isLoggedIn === false) {
     console.log('Good morning')
+}
+else if (isLoggedIn === false && time >= 5 && time <= 12){
+    console.log(`Good morning.`)
+} else if (isLoggedIn === false && time >= 13 && time <= 18){
+    console.log(`Good Afternoon`)
+} else if (isLoggedIn === false && time >= 19){
+    console.log(`Good Evening`)
+} else if (isLoggedIn === false && time <= 4){
+    console.log(`Good Evening`)
 }
